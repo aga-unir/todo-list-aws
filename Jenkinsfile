@@ -15,6 +15,7 @@ pipeline {
                 sh '''
                     echo "GetRepoConfig: PRO"
                     wget https://raw.githubusercontent.com/aga-unir/todo-list-aws-config/production/samconfig.toml
+                    cat samconfig.toml
                 ''' 
                 
             }
