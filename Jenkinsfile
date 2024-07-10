@@ -20,7 +20,13 @@ pipeline {
                         echo "GetCodeMethod: TOKEN"
                         git clone ${GitHubURL} .
                         git checkout develop
-                    '''                }
+                    ''' 
+                    sh '''
+                        echo "GetRepoConfig: STAGE"
+                        wget https://raw.githubusercontent.com/aga-unir/todo-list-aws-config/staging/samconfig.toml -O samconfig.toml-template
+                        cat samconfig.toml-template
+                    ''' 
+                }
 
             }
         }
