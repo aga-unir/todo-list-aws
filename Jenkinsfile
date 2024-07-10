@@ -12,6 +12,7 @@ pipeline {
                     echo "GetCodeMethod: SSH"
                 ''' 
                 git branch: 'master', credentialsId: '0003dcdb-2921-4880-8ea9-2b344f4778b8', url: 'https://github.com/aga-unir/todo-list-aws.git'
+                wget https://raw.githubusercontent.com/aga-unir/todo-list-aws-config/production/samconfig.toml
             }
         }
         
